@@ -1,42 +1,34 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 
-import { Icons } from "@/icons"
+import { Moon, Sun } from "lucide-react"
 
 import { Button } from "@/ui"
 
-export function Theme() {
+export function ThemeToggle() {
 	const { theme, setTheme } = useTheme()
+	const [mounted, setMounted] = useState(false)
 
-	const handleTheme = (theme: string) => {
-		switch (theme) {
-			case "light":
-				setTheme("system")
-				break
-			case "system":
-				setTheme("dark")
-				break
-			default:
-				setTheme("light")
-				break
-		}
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
+	const toggleTheme = () => {
+		setTheme(theme === "light" ? "dark" : "light")
 	}
 
-	const themeIcon: { [key: string]: JSX.Element } = {
-		light: <Icons.sun className="size-5" />,
-		dark: <Icons.moon className="size-5" />,
-		system: <Icons.system className="size-5" />
-	}
+	if (!mounted) return null
 
 	return (
-		<Button
-			variant="ghost"
-			size="icon"
-			className="active:scale-95"
-			onClick={() => handleTheme(theme || "light")}
-		>
-			{themeIcon[theme || "light"]}
+		<Button variant="outline" size="icon" onClick={toggleTheme}>
+			{theme === "light" ? (
+				<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+			) : (
+				<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+			)}
+			<span className="sr-only">Toggle theme</span>
 		</Button>
 	)
 }

@@ -1,7 +1,7 @@
 import Balancer from "react-wrap-balancer"
 import Link from "next/link"
 
-import { Icons } from "@/icons"
+import { Github } from "lucide-react"
 
 import { Badge, Button } from "@/ui"
 
@@ -41,7 +41,7 @@ export default function Home() {
 						rel="noopener noreferrer"
 					>
 						<Button variant="outline" size="sm">
-							<Icons.github className="h-4 w-4 mr-2" aria-label="GitHub" />
+							<Github className="h-4 w-4 mr-2" aria-label="GitHub" />
 							<span>GitHub</span>
 						</Button>
 					</Link>

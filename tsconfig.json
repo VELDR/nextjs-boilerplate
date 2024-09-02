@@ -31,8 +31,7 @@
 			"@/hooks": ["./src/hooks"],
 			"@/stores": ["./src/stores"],
 			"@/services": ["./src/services"],
-			"@/utils": ["./src/lib/utils"],
-			"@/icons": ["./src/lib/icons"]
+			"@/utils": ["./src/lib/utils"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

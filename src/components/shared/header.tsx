@@ -1,5 +1,5 @@
 import { Nav } from "@/shared"
-import { Social, Theme } from "@/widgets"
+import { Social, ThemeToggle } from "@/widgets"
 import { Brand } from "@/ui"
 
 export const Header = () => {
@@ -13,7 +13,7 @@ export const Header = () => {
 
 				<div className="flex items-center">
 					<Social />
-					<Theme />
+					<ThemeToggle />
 				</div>
 			</div>
 		</header>

@@ -1,6 +1,6 @@
 "use client"
 
-import { Icons } from "@/icons"
+import { Loader } from "lucide-react"
 
 import { UserListSkeletons } from "@/skeletons"
 import { Button } from "@/ui"
@@ -21,7 +21,7 @@ export function Query() {
 
 	const buttonContent = isLoading ? (
 		<>
-			<Icons.loader className="mr-2 h-4 w-4 animate-spin" />
+			<Loader className="mr-2 h-4 w-4 animate-spin" />
 			<span>Loading...</span>
 		</>
 	) : (

@@ -1,12 +1,12 @@
 import Link from "next/link"
 
-import { Icons } from "@/icons"
+import { Flower } from "lucide-react"
 
 const Brand = () => {
 	return (
 		<>
 			<Link href="/">
-				<Icons.flower aria-label="Flower icon" />
+				<Flower aria-label="Flower icon" />
 			</Link>
 		</>
 	)

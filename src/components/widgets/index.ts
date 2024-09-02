@@ -1,2 +1,2 @@
 export { Social } from "./social"
-export { Theme } from "./theme"
+export { ThemeToggle } from "./theme"
