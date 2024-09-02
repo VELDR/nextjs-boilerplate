@@ -1,3 +1,40 @@
 {
-	"extends": "next/core-web-vitals"
+	"extends": [
+		"next",
+		"next/core-web-vitals",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript"
+	],
+	"globals": { "React": true },
+	"plugins": ["react", "react-hooks", "jsx-a11y", "import"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"react/jsx-no-undef": "error",
+		"import/no-unresolved": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "off",
+		"no-unused-vars": [
+			"warn",
+			{ "vars": "all", "args": "after-used", "ignoreRestSiblings": true }
+		],
+		"no-prototype-builtins": "off",
+		"prefer-destructuring": "error",
+		"jsx-a11y/click-events-have-key-events": "off",
+		"jsx-a11y/no-static-element-interactions": "off"
+	},
+	"settings": {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/resolver": {
+			"alias": {
+				"extensions": [".ts", ".tsx", ".js", ".jsx", ".json"]
+			}
+		}
+	}
 }
