@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { Loader } from "lucide-react"
+import { Loader } from "lucide-react";
 
-import { UserListSkeletons } from "@/skeletons"
-import { Button } from "@/ui"
-import { useUsers } from "@/hooks"
+import { UserListSkeletons } from "@/skeletons";
+import { Button } from "@/ui";
+import { useUsers } from "@/hooks";
 
 export function Query() {
 	const {
 		data: userListData = [],
 		isLoading,
 		error,
-		refetch
+		refetch,
 	} = useUsers(false) as {
-		data: { id: number; name: string }[]
-		isLoading: boolean
-		error: Error
-		refetch: () => void
-	}
+		data: { id: number; name: string }[];
+		isLoading: boolean;
+		error: Error;
+		refetch: () => void;
+	};
 
 	const buttonContent = isLoading ? (
 		<>
@@ -26,7 +26,7 @@ export function Query() {
 		</>
 	) : (
 		<span>Get all users</span>
-	)
+	);
 
 	return (
 		<section className="flex w-full flex-col gap-2 pt-6">
@@ -49,5 +49,5 @@ export function Query() {
 				</ul>
 			</div>
 		</section>
-	)
+	);
 }

@@ -1,10 +1,10 @@
 export const navConfig = [
 	{
 		title: "Home",
-		href: "/"
+		href: "/",
 	},
 	{
 		title: "Dashboard",
-		href: "/dashboard"
-	}
-]
+		href: "/dashboard",
+	},
+];

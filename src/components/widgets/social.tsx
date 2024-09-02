@@ -1,8 +1,8 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { Github } from "lucide-react"
+import { Github } from "lucide-react";
 
-import { siteConfig } from "@/config"
+import { siteConfig } from "@/config";
 
 export function Social() {
 	return (
@@ -17,5 +17,5 @@ export function Social() {
 				</div>
 			</Link>
 		</>
-	)
+	);
 }

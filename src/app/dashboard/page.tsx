@@ -1,10 +1,10 @@
-import type { Metadata } from "next"
+import type { Metadata } from "next";
 
-import { DarkTheme, Forms, Query, Storages, Store } from "@/features"
+import { DarkTheme, Forms, Query, Store } from "@/features";
 
 export const metadata: Metadata = {
-	title: "Dashboard"
-}
+	title: "Dashboard",
+};
 
 export default function Dashboard() {
 	return (
@@ -16,8 +16,7 @@ export default function Dashboard() {
 				<DarkTheme />
 				<Query />
 				<Forms />
-				<Storages />
 			</div>
 		</>
-	)
+	);
 }

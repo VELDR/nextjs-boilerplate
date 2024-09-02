@@ -1,4 +1,4 @@
-import { Skeleton } from "@/ui"
+import { Skeleton } from "@/ui";
 
 export function UserListSkeletons() {
 	return (
@@ -7,5 +7,5 @@ export function UserListSkeletons() {
 				<Skeleton className="h-6 w-[250px]" key={index} />
 			))}
 		</>
-	)
+	);
 }

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { SubmitHandler, useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 
-import { Button, Input, Label } from "@/ui"
+import { Button, Input, Label } from "@/ui";
 
 const schema = z.object({
 	name: z
@@ -16,25 +16,25 @@ const schema = z.object({
 	age: z
 		.number()
 		.positive({ message: "Must be a positive number" })
-		.min(18, { message: "Must be 18 or older" })
-})
+		.min(18, { message: "Must be 18 or older" }),
+});
 
-type Schema = z.infer<typeof schema>
+type Schema = z.infer<typeof schema>;
 
 export function Forms() {
 	const {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors }
+		formState: { errors },
 	} = useForm<Schema>({
-		resolver: zodResolver(schema)
-	})
+		resolver: zodResolver(schema),
+	});
 
 	const onSubmit: SubmitHandler<Schema> = (data) => {
-		alert(JSON.stringify(data, null, 2))
-		reset()
-	}
+		alert(JSON.stringify(data, null, 2));
+		reset();
+	};
 
 	return (
 		<section className="flex w-full flex-col gap-2 pt-6">
@@ -69,5 +69,5 @@ export function Forms() {
 				<Button type="submit">Submit</Button>
 			</form>
 		</section>
-	)
+	);
 }

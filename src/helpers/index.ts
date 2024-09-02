@@ -7,7 +7,7 @@ export {
 	removeSession,
 	setCookie,
 	getCookie,
-	removeCookie
-} from "./storageHelpers"
+	removeCookie,
+} from "./storageHelpers";
 
-export { api } from "./apiHelpers"
+export { api } from "./apiHelpers";

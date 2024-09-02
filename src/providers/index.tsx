@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { QueryProvider } from "@/providers/queryProvider"
-import { ThemeProvider } from "@/providers/themeProvider"
+import { QueryProvider } from "@/providers/queryProvider";
+import { ThemeProvider } from "@/providers/themeProvider";
 
 export function Providers({ children }: { children: React.ReactNode }) {
 	return (
@@ -13,5 +13,5 @@ export function Providers({ children }: { children: React.ReactNode }) {
 		>
 			<QueryProvider>{children}</QueryProvider>
 		</ThemeProvider>
-	)
+	);
 }

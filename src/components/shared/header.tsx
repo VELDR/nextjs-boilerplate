@@ -1,6 +1,6 @@
-import { Nav } from "@/shared"
-import { Social, ThemeToggle } from "@/widgets"
-import { Brand } from "@/ui"
+import { Nav } from "@/shared";
+import { Social, ThemeToggle } from "@/widgets";
+import { Brand } from "@/ui";
 
 export const Header = () => {
 	return (
@@ -17,5 +17,5 @@ export const Header = () => {
 				</div>
 			</div>
 		</header>
-	)
-}
+	);
+};

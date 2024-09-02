@@ -1,4 +1,4 @@
-import { ThemeToggle } from "@/widgets"
+import { ThemeToggle } from "@/widgets";
 
 export function DarkTheme() {
 	return (
@@ -7,5 +7,5 @@ export function DarkTheme() {
 
 			<ThemeToggle />
 		</section>
-	)
+	);
 }

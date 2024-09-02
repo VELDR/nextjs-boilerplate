@@ -1,6 +1,6 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { Flower } from "lucide-react"
+import { Flower } from "lucide-react";
 
 const Brand = () => {
 	return (
@@ -9,7 +9,7 @@ const Brand = () => {
 				<Flower aria-label="Flower icon" />
 			</Link>
 		</>
-	)
-}
+	);
+};
 
-export { Brand }
+export { Brand };

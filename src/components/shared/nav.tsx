@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import clsx from "clsx"
+import clsx from "clsx";
 
-import { navConfig } from "@/config"
+import { navConfig } from "@/config";
 
 export const Nav = () => {
-	const pathname = usePathname()
+	const pathname = usePathname();
 
-	if (!navConfig) return null
+	if (!navConfig) return null;
 
 	return (
 		<nav className="flex items-center gap-4 text-sm lg:gap-6">
@@ -27,5 +27,5 @@ export const Nav = () => {
 				</Link>
 			))}
 		</nav>
-	)
-}
+	);
+};

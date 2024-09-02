@@ -1,2 +1,2 @@
-export { Header } from "./header"
-export { Nav } from "./nav"
+export { Header } from "./header";
+export { Nav } from "./nav";

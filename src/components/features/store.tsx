@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useShallow } from "zustand/react/shallow"
+import { useShallow } from "zustand/react/shallow";
 
-import { Button } from "@/ui"
-import { useCountStore } from "@/stores"
+import { Button } from "@/ui";
+import { useCountStore } from "@/stores";
 
 export function Store() {
 	const [count, increaseCount, decreaseCount, removeAllCount] = useCountStore(
@@ -11,9 +11,9 @@ export function Store() {
 			state.count,
 			state.increaseCount,
 			state.decreaseCount,
-			state.removeAllCount
+			state.removeAllCount,
 		])
-	)
+	);
 
 	return (
 		<section className="flex w-full flex-col gap-2 pt-6">
@@ -37,5 +37,5 @@ export function Store() {
 				</Button>
 			</div>
 		</section>
-	)
+	);
 }
