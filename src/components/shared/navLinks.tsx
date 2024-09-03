@@ -7,7 +7,7 @@ import clsx from "clsx";
 
 import { navConfig } from "@/config";
 
-export const Nav = () => {
+export const NavLinks = () => {
 	const pathname = usePathname();
 
 	if (!navConfig) return null;

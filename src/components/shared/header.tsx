@@ -1,6 +1,8 @@
-import { Nav } from "@/shared";
+import Link from "next/link";
+
+import { NavLinks } from "@/shared";
 import { Social, ThemeToggle } from "@/widgets";
-import { Brand } from "@/ui";
+import { Brand, Button } from "@/ui";
 
 export const Header = () => {
 	return (
@@ -8,12 +10,18 @@ export const Header = () => {
 			<div className="container h-14 flex max-w-screen-lg items-center justify-between">
 				<div className="flex gap-4 lg:gap-6 items-center">
 					<Brand />
-					<Nav />
+					<NavLinks />
 				</div>
 
-				<div className="flex items-center">
+				<div className="flex items-center gap-2">
 					<Social />
 					<ThemeToggle />
+					<Link href="/login">
+						<Button variant="link">Login</Button>
+					</Link>
+					<Link href="/register">
+						<Button>Register</Button>
+					</Link>
 				</div>
 			</div>
 		</header>
