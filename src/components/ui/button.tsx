@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 
 import { cn } from "@/utils";
 import { Slot } from "@radix-ui/react-slot";
@@ -37,18 +38,27 @@ export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof buttonVariants> {
 	asChild?: boolean;
+	href?: string;
+	prefetch?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ className, variant, size, asChild = false, ...props }, ref) => {
+	(
+		{ className, variant, size, asChild = false, href, prefetch, ...props },
+		ref
+	) => {
 		const Comp = asChild ? Slot : "button";
-		return (
-			<Comp
-				className={cn(buttonVariants({ variant, size, className }))}
-				ref={ref}
-				{...props}
-			/>
-		);
+		const buttonClasses = cn(buttonVariants({ variant, size, className }));
+
+		if (href) {
+			return (
+				<Link href={href} passHref legacyBehavior prefetch={prefetch}>
+					<Comp className={buttonClasses} ref={ref} {...props} />
+				</Link>
+			);
+		}
+
+		return <Comp className={buttonClasses} ref={ref} {...props} />;
 	}
 );
 Button.displayName = "Button";

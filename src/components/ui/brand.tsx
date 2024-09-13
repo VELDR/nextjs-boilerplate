@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Flower } from "lucide-react";
 
-const Brand = () => {
+export const Brand = () => {
 	return (
 		<>
 			<Link href="/">
@@ -11,5 +11,3 @@ const Brand = () => {
 		</>
 	);
 };
-
-export { Brand };

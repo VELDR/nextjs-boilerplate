@@ -1,21 +1,32 @@
-import Link from "next/link";
+import { Button, ThemedImage } from "@/components/ui";
 
-import { Button } from "@/components/ui";
+import notFoundIllustrationDark from "../../public/static/images/404-dark.svg";
+import notFoundIllustrationLight from "../../public/static/images/404-light.svg";
 
 export default function NotFound() {
 	return (
-		<div className="flex flex-col items-center justify-center min-h-[100dvh] text-gray-50 p-4">
-			<div className="flex flex-col gap-4 max-w-md w-full text-center">
-				<div className="flex flex-col gap-2">
+		<div className="flex flex-col items-center min-h-[90dvh] p-4">
+			<div className="flex flex-col max-w-md w-full gap-6 text-center">
+				<ThemedImage
+					lightSrc={notFoundIllustrationLight}
+					darkSrc={notFoundIllustrationDark}
+					alt="404"
+					className="mx-auto object-cover w-80 h-56"
+				/>
+				<div>
 					<h1 className="text-4xl font-bold">Oops! Page not found.</h1>
-					<p className="text-gray-400">
+					<p>
 						The page you&apos;re looking for doesn&apos;t exist or has been
 						moved.
 					</p>
 				</div>
-				<Link href="/" prefetch={false}>
-					<Button>Go back home</Button>
-				</Link>
+				<Button
+					href="/"
+					className="inline-flex mx-auto w-fit h-10 items-center justify-center rounded-md px-6 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300"
+					prefetch={false}
+				>
+					Go back home
+				</Button>
 			</div>
 		</div>
 	);
