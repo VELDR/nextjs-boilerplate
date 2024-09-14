@@ -14,12 +14,19 @@ const config = {
 	},
 	prefix: "",
 	theme: {
+		screens: {
+			sm: "40rem",
+			md: "48rem",
+			lg: "64rem",
+			xl: "80rem",
+			"2xl": "96rem",
+		},
 		container: {
 			center: true,
 			padding: "2rem",
-			screens: {
-				"2xl": "1400px",
-			},
+			// screens: {
+			// 	"2xl": "1400px",
+			// },
 		},
 		extend: {
 			colors: {

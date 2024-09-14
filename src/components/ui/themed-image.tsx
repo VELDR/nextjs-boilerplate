@@ -9,6 +9,7 @@ interface ThemedImageProps {
 	width?: number;
 	height?: number;
 	className?: string;
+	priority?: boolean;
 }
 
 export const ThemedImage = ({
@@ -19,6 +20,7 @@ export const ThemedImage = ({
 	width,
 	height,
 	className,
+	priority = false,
 }: ThemedImageProps) => {
 	return (
 		<React.Fragment>
@@ -29,6 +31,7 @@ export const ThemedImage = ({
 				width={width}
 				height={height}
 				className={`${className} block dark:hidden`}
+				priority={priority}
 			/>
 			<Image
 				src={darkSrc}
@@ -37,6 +40,7 @@ export const ThemedImage = ({
 				width={width}
 				height={height}
 				className={`${className} hidden dark:block`}
+				priority={priority}
 			/>
 		</React.Fragment>
 	);

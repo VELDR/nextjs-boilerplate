@@ -6,7 +6,7 @@ import { Brand, Button } from "@/ui";
 
 export const Header = () => {
 	return (
-		<header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+		<header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="container h-14 flex max-w-screen-lg items-center justify-between">
 				<div className="flex gap-4 lg:gap-6 items-center">
 					<Brand />
