@@ -5,7 +5,7 @@ import * as React from "react";
 import { cn } from "@/utils";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 
-const Separator = React.forwardRef<
+export const Separator = React.forwardRef<
 	React.ElementRef<typeof SeparatorPrimitive.Root>,
 	React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(
@@ -27,5 +27,3 @@ const Separator = React.forwardRef<
 	)
 );
 Separator.displayName = SeparatorPrimitive.Root.displayName;
-
-export { Separator };

@@ -6,7 +6,7 @@ import { UserListSkeletons } from "@/skeletons";
 import { Button } from "@/ui";
 import { useUsers } from "@/hooks";
 
-export function Query() {
+export const Query = () => {
 	const {
 		data: userListData = [],
 		isLoading,
@@ -50,4 +50,4 @@ export function Query() {
 			</div>
 		</section>
 	);
-}
+};

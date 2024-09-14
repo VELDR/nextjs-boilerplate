@@ -5,7 +5,7 @@ import { cn } from "@/utils";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
 	"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
 	{
 		variants: {
@@ -42,7 +42,7 @@ export interface ButtonProps
 	prefetch?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	(
 		{ className, variant, size, asChild = false, href, prefetch, ...props },
 		ref
@@ -62,5 +62,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 	}
 );
 Button.displayName = "Button";
-
-export { Button, buttonVariants };

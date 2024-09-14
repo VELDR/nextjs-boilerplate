@@ -19,11 +19,7 @@ interface CustomFormProps {
 	zodSchema: z.ZodType<any, any, any>;
 }
 
-const CustomForm: React.FC<CustomFormProps> = ({
-	fields,
-	onSubmit,
-	zodSchema,
-}) => {
+const CustomForm = ({ fields, onSubmit, zodSchema }: CustomFormProps) => {
 	const {
 		handleSubmit,
 		formState: { errors },

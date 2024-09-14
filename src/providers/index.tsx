@@ -3,7 +3,7 @@
 import { QueryProvider } from "@/providers/queryProvider";
 import { ThemeProvider } from "@/providers/themeProvider";
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export const Providers = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<ThemeProvider
 			attribute="class"
@@ -14,4 +14,4 @@ export function Providers({ children }: { children: React.ReactNode }) {
 			<QueryProvider>{children}</QueryProvider>
 		</ThemeProvider>
 	);
-}
+};

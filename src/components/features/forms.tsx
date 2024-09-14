@@ -21,7 +21,7 @@ const schema = z.object({
 
 type Schema = z.infer<typeof schema>;
 
-export function Forms() {
+export const Forms = () => {
 	const {
 		register,
 		handleSubmit,
@@ -70,4 +70,4 @@ export function Forms() {
 			</form>
 		</section>
 	);
-}
+};

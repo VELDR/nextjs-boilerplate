@@ -4,7 +4,7 @@ import { Github } from "lucide-react";
 
 import { siteConfig } from "@/config";
 
-export function Social() {
+export const Social = () => {
 	return (
 		<>
 			<Link
@@ -18,4 +18,4 @@ export function Social() {
 			</Link>
 		</>
 	);
-}
+};

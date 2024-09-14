@@ -1,2 +1,2 @@
 export { Header } from "./header";
-export { NavLinks } from "./navLinks";
+export { NavLinks } from "./nav-links";
