@@ -1,13 +1,17 @@
+import fluid, { extract } from "fluid-tailwind";
 import type { Config } from "tailwindcss";
 
 const config = {
 	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{ts,tsx}",
-		"./components/**/*.{ts,tsx}",
-		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
-	],
+	content: {
+		files: [
+			"./pages/**/*.{ts,tsx}",
+			"./components/**/*.{ts,tsx}",
+			"./app/**/*.{ts,tsx}",
+			"./src/**/*.{ts,tsx}",
+		],
+		extract,
+	},
 	prefix: "",
 	theme: {
 		container: {
@@ -74,7 +78,7 @@ const config = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), fluid],
 } satisfies Config;
 
 export default config;
