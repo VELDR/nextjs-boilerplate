@@ -1,6 +1,8 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
+import clsx from "clsx";
+
 interface ThemedImageProps {
 	lightSrc: string | StaticImageData;
 	darkSrc: string | StaticImageData;
@@ -30,7 +32,7 @@ export const ThemedImage = ({
 				fill={fill}
 				width={width}
 				height={height}
-				className={`${className} block dark:hidden`}
+				className={clsx(className, "block dark:hidden")}
 				priority={priority}
 			/>
 			<Image
@@ -39,7 +41,7 @@ export const ThemedImage = ({
 				fill={fill}
 				width={width}
 				height={height}
-				className={`${className} hidden dark:block`}
+				className={clsx(className, "hidden dark:block")}
 				priority={priority}
 			/>
 		</React.Fragment>

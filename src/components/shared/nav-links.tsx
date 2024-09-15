@@ -7,21 +7,35 @@ import clsx from "clsx";
 
 import { navConfig } from "@/config";
 
-export const NavLinks = () => {
+interface NavLinksProp {
+	showVertical?: boolean;
+	onLinkClick?: () => void;
+}
+
+export const NavLinks = ({
+	showVertical = false,
+	onLinkClick,
+}: NavLinksProp) => {
 	const pathname = usePathname();
 
 	if (!navConfig) return null;
 
 	return (
-		<nav className="flex items-center gap-4 text-sm lg:gap-6">
+		<nav
+			className={clsx(
+				"flex gap-4 text-sm lg:gap-6",
+				showVertical ? "flex-col items-start" : "flex-row items-center"
+			)}
+		>
 			{navConfig?.map(({ title, href = "/" }: any) => (
 				<Link
 					key={href}
 					href={href}
 					className={clsx(
-						"transition-colors hover:text-foreground/80",
+						"hover:text-foreground/80 transition-colors",
 						pathname === href ? "text-foreground" : "text-foreground/60"
 					)}
+					onClick={onLinkClick}
 				>
 					{title}
 				</Link>

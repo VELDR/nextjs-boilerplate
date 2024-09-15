@@ -9,7 +9,7 @@ export default function Home() {
 	return (
 		<>
 			<section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-40 lg:pb-20">
-				<h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
+				<h1 className="~text-3xl/5xl text-center font-bold leading-tight tracking-tighter lg:leading-[1.1]">
 					Next.js Boilerplate
 				</h1>
 
@@ -33,7 +33,7 @@ export default function Home() {
 						rel="noopener noreferrer"
 					>
 						<Button variant="outline" size="sm">
-							<Github className="h-4 w-4 mr-2" aria-label="GitHub" />
+							<Github className="mr-2 h-4 w-4" aria-label="GitHub" />
 							<span>GitHub</span>
 						</Button>
 					</Link>

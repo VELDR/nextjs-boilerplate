@@ -9,7 +9,11 @@
 	"quoteProps": "as-needed",
 	"ObjectCurlySpacing": "always",
 	"explicitTypes": "always",
-	"HTMLWhitespaceSensitivity": "ignore",
+	"htmlWhitespaceSensitivity": "ignore",
+	"plugins": [
+		"@ianvs/prettier-plugin-sort-imports",
+		"prettier-plugin-tailwindcss"
+	],
 	"importOrder": [
 		"^(react/(.*)$)|^(react$)|^(react-(.*)$)",
 		"^(next/(.*)$)|^(next$)|^(next-(.*)$)",
@@ -28,11 +32,5 @@
 		"",
 		"^[./]"
 	],
-	"importOrderSeparation": true,
-	"importOrderSortSpecifiers": true,
-	"importOrderCaseInsensitive": true,
-	"plugins": [
-		"prettier-plugin-tailwindcss",
-		"@ianvs/prettier-plugin-sort-imports"
-	]
+	"tailwindFunctions": ["clsx", "cva"]
 }

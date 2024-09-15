@@ -35,7 +35,7 @@ const CustomForm = ({ fields, onSubmit, zodSchema }: CustomFormProps) => {
 	return (
 		<form
 			onSubmit={handleSubmit(handleFormSubmit)}
-			className="flex max-w-sm w-full flex-col gap-4"
+			className="flex w-full max-w-sm flex-col gap-4"
 		>
 			{fields.map((field) => (
 				<div key={field.name} className="grid w-full items-center gap-1.5">

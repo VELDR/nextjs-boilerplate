@@ -15,6 +15,7 @@ const config = {
 	prefix: "",
 	theme: {
 		screens: {
+			xs: "30rem",
 			sm: "40rem",
 			md: "48rem",
 			lg: "64rem",
@@ -77,6 +78,11 @@ const config = {
 				"accordion-up": {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
+				},
+				shimmer: {
+					"100%": {
+						transform: "translateX(100%)",
+					},
 				},
 			},
 			animation: {
