@@ -1,17 +1,55 @@
 "use client";
 
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import React, { useState } from "react";
+import {
+	Control,
+	Controller,
+	FieldPath,
+	FieldValues,
+	SubmitHandler,
+	useForm,
+} from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff } from "lucide-react";
 import * as z from "zod";
 
-import { Button, Input, Label } from "@/ui";
+import {
+	Button,
+	Input,
+	Label,
+	RadioGroup,
+	RadioGroupItem,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/ui";
 
-type FieldConfig = {
+type BaseFieldConfig = {
 	name: string;
 	label: string;
-	type: string;
 };
+
+type InputFieldConfig = BaseFieldConfig & {
+	type: "text" | "email" | "password" | "number";
+};
+
+type RadioFieldConfig = BaseFieldConfig & {
+	type: "radio";
+	options: { value: string; label: string }[];
+};
+
+type SelectFieldConfig = BaseFieldConfig & {
+	type: "select";
+	options: { value: string; label: string }[];
+};
+
+export type FieldConfig =
+	| InputFieldConfig
+	| RadioFieldConfig
+	| SelectFieldConfig;
 
 interface CustomFormProps {
 	fields: FieldConfig[];
@@ -26,20 +64,71 @@ const CustomForm = ({ fields, onSubmit, zodSchema }: CustomFormProps) => {
 		control,
 	} = useForm({
 		resolver: zodResolver(zodSchema),
+		defaultValues: fields.reduce(
+			(acc, field) => {
+				acc[field.name] = "";
+				return acc;
+			},
+			{} as Record<string, any>
+		),
 	});
 
 	const handleFormSubmit: SubmitHandler<any> = (data) => {
 		onSubmit(data);
 	};
 
-	return (
-		<form
-			onSubmit={handleSubmit(handleFormSubmit)}
-			className="flex w-full max-w-sm flex-col gap-4"
-		>
-			{fields.map((field) => (
-				<div key={field.name} className="grid w-full items-center gap-1.5">
-					<Label htmlFor={field.name}>{field.label}</Label>
+	const renderField = (field: FieldConfig) => {
+		switch (field.type) {
+			case "radio":
+				return (
+					<Controller
+						name={field.name}
+						control={control}
+						render={({ field: { onChange, value } }) => (
+							<RadioGroup onValueChange={onChange} value={value}>
+								{field.options.map((option) => (
+									<div
+										key={option.value}
+										className="flex items-center space-x-2"
+									>
+										<RadioGroupItem
+											value={option.value}
+											id={`${field.name}-${option.value}`}
+										/>
+										<Label htmlFor={`${field.name}-${option.value}`}>
+											{option.label}
+										</Label>
+									</div>
+								))}
+							</RadioGroup>
+						)}
+					/>
+				);
+			case "select":
+				return (
+					<Controller
+						name={field.name}
+						control={control}
+						render={({ field: { onChange, value } }) => (
+							<Select onValueChange={onChange} value={value}>
+								<SelectTrigger>
+									<SelectValue placeholder="Select an option" />
+								</SelectTrigger>
+								<SelectContent>
+									{field.options.map((option) => (
+										<SelectItem key={option.value} value={option.value}>
+											{option.label}
+										</SelectItem>
+									))}
+								</SelectContent>
+							</Select>
+						)}
+					/>
+				);
+			case "password":
+				return <PasswordInput name={field.name} control={control} />;
+			default:
+				return (
 					<Controller
 						name={field.name}
 						control={control}
@@ -54,6 +143,19 @@ const CustomForm = ({ fields, onSubmit, zodSchema }: CustomFormProps) => {
 							/>
 						)}
 					/>
+				);
+		}
+	};
+
+	return (
+		<form
+			onSubmit={handleSubmit(handleFormSubmit)}
+			className="flex w-full max-w-sm flex-col gap-4"
+		>
+			{fields.map((field) => (
+				<div key={field.name} className="grid w-full items-center gap-1.5">
+					<Label htmlFor={field.name}>{field.label}</Label>
+					{renderField(field)}
 					{errors[field.name] && (
 						<span className="text-sm text-red-500">
 							{errors[field.name]?.message as string}
@@ -64,6 +166,45 @@ const CustomForm = ({ fields, onSubmit, zodSchema }: CustomFormProps) => {
 
 			<Button type="submit">Submit</Button>
 		</form>
+	);
+};
+
+interface PasswordInputProps<T extends FieldValues> {
+	name: FieldPath<T>;
+	control: Control<T>;
+}
+
+const PasswordInput = <T extends FieldValues>({
+	name,
+	control,
+}: PasswordInputProps<T>) => {
+	const [showPassword, setShowPassword] = useState(false);
+
+	return (
+		<Controller
+			name={name}
+			control={control}
+			render={({ field }) => (
+				<div className="relative">
+					<Input
+						{...field}
+						type={showPassword ? "text" : "password"}
+						id={name}
+					/>
+					<button
+						type="button"
+						className="absolute right-2 top-1/2 -translate-y-1/2"
+						onClick={() => setShowPassword(!showPassword)}
+					>
+						{showPassword ? (
+							<EyeOff className="h-4 w-4 text-gray-500" />
+						) : (
+							<Eye className="h-4 w-4 text-gray-500" />
+						)}
+					</button>
+				</div>
+			)}
+		/>
 	);
 };
 

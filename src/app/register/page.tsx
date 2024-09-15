@@ -1,6 +1,6 @@
 "use client";
 
-import CustomForm from "@/components/shared/custom-form";
+import CustomForm, { FieldConfig } from "@/components/shared/custom-form";
 import * as z from "zod";
 
 const formSchema = z
@@ -8,7 +8,7 @@ const formSchema = z
 		username: z
 			.string()
 			.trim()
-			.min(1, { message: "Required" })
+			.min(1, { message: "This field has to be filled." })
 			.min(2, { message: "Must be 2 or more characters long" }),
 		email: z
 			.string()
@@ -19,7 +19,7 @@ const formSchema = z
 			.min(1, { message: "This field has to be filled." })
 			.min(8, { message: "Must be 8 or more characters long" })
 			.regex(
-				/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+				/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*[^\s]).{8,}$/,
 				{
 					message:
 						"Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
@@ -28,13 +28,17 @@ const formSchema = z
 		confirmPassword: z
 			.string()
 			.min(1, { message: "This field has to be filled." }),
+		gender: z.enum(["male", "female", "other"], {
+			message: "Please select a gender",
+		}),
+		country: z.string().min(1, { message: "Please select a country." }),
 	})
 	.refine((data) => data.password === data.confirmPassword, {
 		message: "Passwords don't match",
 		path: ["confirmPassword"],
 	});
 
-const fields = [
+const fields: FieldConfig[] = [
 	{
 		name: "username",
 		label: "Username",
@@ -54,6 +58,27 @@ const fields = [
 		name: "confirmPassword",
 		label: "Confirm Password",
 		type: "password",
+	},
+	{
+		name: "gender",
+		label: "Gender",
+		type: "radio",
+		options: [
+			{ value: "male", label: "Male" },
+			{ value: "female", label: "Female" },
+			{ value: "other", label: "Other" },
+		],
+	},
+	{
+		name: "country",
+		label: "Country",
+		type: "select",
+		options: [
+			{ value: "usa", label: "United States" },
+			{ value: "uk", label: "United Kingdom" },
+			{ value: "canada", label: "Canada" },
+			{ value: "australia", label: "Australia" },
+		],
 	},
 ];
 
