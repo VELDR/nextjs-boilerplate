@@ -9,7 +9,7 @@ export default function Home() {
 	return (
 		<>
 			<section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-40 lg:pb-20">
-				<h1 className="~text-3xl/5xl text-center font-bold leading-tight tracking-tighter lg:leading-[1.1]">
+				<h1 className="text-center font-bold leading-tight tracking-tighter ~text-3xl/5xl lg:leading-[1.1]">
 					Next.js Boilerplate
 				</h1>
 
