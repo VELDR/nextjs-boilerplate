@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 import { Github } from "lucide-react";
@@ -6,7 +7,7 @@ import { siteConfig } from "@/config";
 
 export const Social = () => {
 	return (
-		<>
+		<React.Fragment>
 			<Link
 				href={siteConfig.links.github}
 				rel="noopener noreferrer"
@@ -16,6 +17,6 @@ export const Social = () => {
 					<Github className="h-5 w-5" aria-label="GitHub" />
 				</div>
 			</Link>
-		</>
+		</React.Fragment>
 	);
 };

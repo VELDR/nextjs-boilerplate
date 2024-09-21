@@ -1,3 +1,4 @@
+import React from "react";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 
@@ -7,13 +8,13 @@ import { Button } from "@/ui";
 
 export default function Home() {
 	return (
-		<>
+		<React.Fragment>
 			<section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-40 lg:pb-20">
 				<h1 className="text-center font-bold leading-tight tracking-tighter ~text-3xl/5xl lg:leading-[1.1]">
 					Next.js Boilerplate
 				</h1>
 
-				<p className="text-center text-lg font-light text-foreground">
+				<p className="text-lg text-center font-light text-foreground">
 					<Balancer>
 						An open source boilerplate built using Next.js 14, TypeScript, and
 						Tailwind CSS
@@ -39,6 +40,6 @@ export default function Home() {
 					</Link>
 				</nav>
 			</section>
-		</>
+		</React.Fragment>
 	);
 }

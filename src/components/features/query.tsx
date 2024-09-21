@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 import { Loader } from "lucide-react";
 
 import { UserListSkeletons } from "@/skeletons";
@@ -20,10 +22,10 @@ export const Query = () => {
 	};
 
 	const buttonContent = isLoading ? (
-		<>
+		<React.Fragment>
 			<Loader className="mr-2 h-4 w-4 animate-spin" />
 			<span>Loading...</span>
-		</>
+		</React.Fragment>
 	) : (
 		<span>Get all users</span>
 	);

@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,5 +10,5 @@ export default function Layout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	return <>{children}</>;
+	return <React.Fragment>{children}</React.Fragment>;
 }
