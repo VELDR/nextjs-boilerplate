@@ -2,53 +2,31 @@
 
 import React from "react";
 
-import { Loader } from "lucide-react";
+import { ProductListSkeletons } from "@/skeletons";
+import { useProducts } from "@/hooks";
 
-import { UserListSkeletons } from "@/skeletons";
-import { Button } from "@/ui";
-import { useUsers } from "@/hooks";
+import { ProductItem } from "./product-item";
 
 export const Query = () => {
 	const {
-		data: userListData = [],
+		data: productListData = [],
 		isLoading,
 		error,
-		refetch,
-	} = useUsers(false) as {
-		data: { id: number; name: string }[];
+	} = useProducts() as {
+		data: { title: string; thumbnail: string; price: number }[];
 		isLoading: boolean;
 		error: Error;
-		refetch: () => void;
 	};
-
-	const buttonContent = isLoading ? (
-		<React.Fragment>
-			<Loader className="mr-2 h-4 w-4 animate-spin" />
-			<span>Loading...</span>
-		</React.Fragment>
-	) : (
-		<span>Get all users</span>
-	);
 
 	return (
 		<section className="flex w-full flex-col gap-2 pt-6">
 			<h2 className="font-medium">TanStack Query</h2>
 			<div className="flex flex-col gap-2">
-				<Button
-					onClick={() => refetch()}
-					className="w-40"
-					disabled={!!isLoading}
-				>
-					{buttonContent}
-				</Button>
-
-				<ul className="flex flex-col gap-2">
-					{isLoading && <UserListSkeletons />}
-					{error && <li>Error: {error.message}</li>}
-					{userListData.map(({ id, name }) => (
-						<li key={id}>{name}</li>
-					))}
-				</ul>
+				{isLoading && <ProductListSkeletons />}
+				{error && <p>Error: {error.message}</p>}
+				{productListData.map((product, index: number) => (
+					<ProductItem key={index} product={product} />
+				))}
 			</div>
 		</section>
 	);

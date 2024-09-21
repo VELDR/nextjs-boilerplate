@@ -1,1 +1,1 @@
-export { userAPI } from "./userService";
+export { productAPI } from "./productService";

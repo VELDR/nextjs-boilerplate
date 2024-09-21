@@ -6,7 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function delay(ms = 1000) {
-	return function (x: any) {
-		return new Promise((resolve) => setTimeout(() => resolve(x), ms));
-	};
+	return new Promise(resolve => setTimeout(resolve, ms));
 }

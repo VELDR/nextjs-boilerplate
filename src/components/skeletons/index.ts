@@ -1,1 +1,1 @@
-export { UserListSkeletons } from "./user-list-skeletons";
+export { ProductListSkeletons } from "./product-list-skeletons";
