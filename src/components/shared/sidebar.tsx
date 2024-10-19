@@ -2,7 +2,7 @@ import { Brand, Button } from "@/components/ui";
 import clsx from "clsx";
 import { X } from "lucide-react";
 
-import { NavLinks } from "./nav-links";
+import { NavLinks } from "@/shared";
 
 interface SidebarProps {
 	isOpen: boolean;

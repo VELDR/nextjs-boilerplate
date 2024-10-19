@@ -14,7 +14,7 @@ export default function Home() {
 					Next.js Boilerplate
 				</h1>
 
-				<p className="text-lg text-center font-light text-foreground">
+				<p className="text-center text-lg font-light text-foreground">
 					<Balancer>
 						An open source boilerplate built using Next.js 14, TypeScript, and
 						Tailwind CSS

@@ -57,7 +57,11 @@ interface CustomFormProps {
 	zodSchema: z.ZodType<any, any, any>;
 }
 
-const CustomForm = ({ fields, onSubmit, zodSchema }: CustomFormProps) => {
+export const CustomForm = ({
+	fields,
+	onSubmit,
+	zodSchema,
+}: CustomFormProps) => {
 	const {
 		handleSubmit,
 		formState: { errors },
@@ -207,5 +211,3 @@ const PasswordInput = <T extends FieldValues>({
 		/>
 	);
 };
-
-export default CustomForm;

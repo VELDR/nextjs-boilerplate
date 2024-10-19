@@ -1,6 +1,6 @@
 "use client";
 
-import CustomForm, { FieldConfig } from "@/components/shared/custom-form";
+import { CustomForm, FieldConfig } from "@/components/shared";
 import * as z from "zod";
 
 const formSchema = z

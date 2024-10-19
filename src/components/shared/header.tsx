@@ -5,11 +5,9 @@ import Link from "next/link";
 
 import { Menu } from "lucide-react";
 
-import { NavLinks } from "@/shared";
+import { NavLinks, Sidebar } from "@/shared";
 import { Social, ThemeToggle } from "@/widgets";
 import { Brand, Button } from "@/ui";
-
-import { Sidebar } from "./sidebar";
 
 export const Header = () => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);
