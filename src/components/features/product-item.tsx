@@ -1,24 +1,25 @@
 import React from "react";
 import Image from "next/image";
 
-interface Product {
-	title: string;
-	thumbnail: string;
-	price: number;
-}
+import { Product } from "@/services/product/types";
 
 interface ProductItemProps {
 	product: Product;
+	onClick: () => void;
 }
 
-export const ProductItem = ({ product }: ProductItemProps) => {
+export const ProductItem = ({ product, onClick }: ProductItemProps) => {
 	return (
-		<div className="flex flex-row gap-4 border p-2">
+		<div
+			className="flex cursor-pointer flex-row gap-4 border p-2"
+			onClick={onClick}
+		>
 			<div className="relative h-20 w-40">
 				<Image
 					src={product.thumbnail}
 					alt={product.title}
 					fill
+					sizes="10rem, (min-width: 768px) 20rem"
 					className="object-cover"
 					priority
 				/>
