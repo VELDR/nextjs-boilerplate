@@ -1,15 +1,14 @@
 import React from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, { ImageProps, StaticImageData } from "next/image";
 
 import clsx from "clsx";
 
-interface ThemedImageProps {
+interface ThemedImageProps extends Omit<ImageProps, "src" | "alt"> {
 	lightSrc: string | StaticImageData;
 	darkSrc: string | StaticImageData;
 	alt: string;
 	className?: string;
 }
-
 export const ThemedImage = ({
 	lightSrc,
 	darkSrc,
