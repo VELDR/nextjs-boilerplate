@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 
-import { DarkTheme, Forms, Query, Store } from "@/features";
+import { Forms, Query, Store } from "@/features";
 
 export const metadata: Metadata = {
 	title: "Dashboard",
@@ -14,7 +14,6 @@ export default function Dashboard() {
 				<h1 className="text-2xl font-medium">Dashboard</h1>
 
 				<Store />
-				<DarkTheme />
 				<Query />
 				<Forms />
 			</div>

@@ -1,1 +1,1 @@
-export { useProducts } from "./useProducts";
+export { useGetAllProducts, useGetProductById } from "./useProducts";

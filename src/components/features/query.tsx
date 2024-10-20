@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 import { ProductListSkeletons } from "@/skeletons";
-import { useGetAllProducts } from "@/hooks/useProducts";
+import { useGetAllProducts } from "@/hooks";
 
 import { ProductItem } from "./product-item";
 
