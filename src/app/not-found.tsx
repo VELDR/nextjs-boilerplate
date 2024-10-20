@@ -1,4 +1,4 @@
-import { Button, Separator, Skeleton, ThemedImage } from "@/components/ui";
+import { Button, Separator, ThemedImage } from "@/components/ui";
 import notFoundIllustrationDark from "@/images/404-dark.svg";
 import notFoundIllustrationLight from "@/images/404-light.svg";
 
@@ -15,7 +15,7 @@ export default function NotFound() {
 				/>
 				<Separator />
 				<div>
-					<h1 className="~text-2xl/4xl font-bold">Oops! Page not found.</h1>
+					<h1 className="font-bold ~text-2xl/4xl">Oops! Page not found.</h1>
 					<p>
 						The page you&apos;re looking for doesn&apos;t exist or has been
 						moved.

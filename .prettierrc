@@ -7,8 +7,6 @@
 	"endOfLine": "auto",
 	"arrowParens": "always",
 	"quoteProps": "as-needed",
-	"ObjectCurlySpacing": "always",
-	"explicitTypes": "always",
 	"htmlWhitespaceSensitivity": "ignore",
 	"plugins": [
 		"@ianvs/prettier-plugin-sort-imports",
