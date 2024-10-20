@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+import { CloseButton } from "../widgets";
+
 interface BottomSheetProps {
 	isOpen: boolean;
 	onClose: () => void;
@@ -23,23 +25,43 @@ export const BottomSheet = ({
 
 	useEffect(() => {
 		const checkMobile = () => {
-			setIsMobile(window.innerWidth < 768);
+			const isMobileView = window.innerWidth < 768;
+			if (isMobileView !== isMobile) {
+				setIsMobile(isMobileView);
+			}
 		};
 
 		checkMobile();
 		window.addEventListener("resize", checkMobile);
 		return () => window.removeEventListener("resize", checkMobile);
-	}, []);
+	}, [isMobile]);
 
-	const variants = {
-		hidden: isMobile ? { y: "100%" } : { scale: 0.95, opacity: 0 },
-		visible: isMobile ? { y: 0 } : { scale: 1, opacity: 1 },
+	const mobileVariants = {
+		hidden: { y: "100%" },
+		visible: { y: 0 },
 	};
+
+	const desktopVariants = {
+		hidden: {
+			opacity: 0,
+			x: "-50%",
+			y: "-50%",
+			scale: 0.95,
+		},
+		visible: {
+			opacity: 1,
+			x: "-50%",
+			y: "-50%",
+			scale: 1,
+		},
+	};
+
+	const key = `bottom-sheet-${isMobile ? "mobile" : "desktop"}`;
 
 	return (
 		<AnimatePresence>
 			{isOpen && (
-				<>
+				<div className="relative">
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
@@ -49,10 +71,11 @@ export const BottomSheet = ({
 					/>
 
 					<motion.div
+						key={key}
 						initial="hidden"
 						animate="visible"
 						exit="hidden"
-						variants={variants}
+						variants={isMobile ? mobileVariants : desktopVariants}
 						transition={{ type: "spring", damping: 25, stiffness: 300 }}
 						drag={isMobile ? "y" : false}
 						dragConstraints={{ top: 0 }}
@@ -63,7 +86,7 @@ export const BottomSheet = ({
 						className={`fixed z-50 ${
 							isMobile
 								? "bottom-0 left-0 right-0"
-								: "left-1/2 top-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg"
+								: "left-1/2 top-1/2 w-full max-w-md"
 						}`}
 					>
 						<div
@@ -78,10 +101,14 @@ export const BottomSheet = ({
 								/>
 							)}
 
-							{/* Actual content */}
 							<div className="relative pt-2">
-								{isMobile && (
+								{isMobile ? (
 									<div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-background" />
+								) : (
+									<CloseButton
+										onClick={onClose}
+										className="absolute right-2 top-2"
+									/>
 								)}
 								<div className="px-4 pb-4">
 									<div className="mb-4 flex items-center justify-between">
@@ -97,7 +124,7 @@ export const BottomSheet = ({
 							</div>
 						</div>
 					</motion.div>
-				</>
+				</div>
 			)}
 		</AnimatePresence>
 	);
