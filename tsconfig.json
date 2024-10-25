@@ -1,46 +1,83 @@
 {
-	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
-		"paths": {
-			"@/*": ["./src/*"],
-			"@/ui": ["./src/components/ui"],
-			"@/widgets": ["./src/components/widgets"],
-			"@/features": ["./src/components/features"],
-			"@/shared": ["./src/components/shared"],
-			"@/skeletons": ["./src/components/skeletons"],
-			"@/providers/*": ["./src/providers/*"],
-			"@/config": ["./src/config"],
-			"@/data": ["./src/data"],
-			"@/helpers": ["./src/helpers"],
-			"@/hooks": ["./src/hooks"],
-			"@/stores": ["./src/stores"],
-			"@/services": ["./src/services"],
-			"@/utils": ["./src/lib/utils"],
-			"@/images/*": ["./public/static/images/*"]
-		}
-	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts",
-		"./src/types/images.d.ts"
-	],
-	"exclude": ["node_modules"]
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/ui": [
+        "./src/components/ui"
+      ],
+      "@/widgets": [
+        "./src/components/widgets"
+      ],
+      "@/features": [
+        "./src/components/features"
+      ],
+      "@/shared": [
+        "./src/components/shared"
+      ],
+      "@/skeletons": [
+        "./src/components/skeletons"
+      ],
+      "@/providers/*": [
+        "./src/providers/*"
+      ],
+      "@/config": [
+        "./src/config"
+      ],
+      "@/data": [
+        "./src/data"
+      ],
+      "@/helpers": [
+        "./src/helpers"
+      ],
+      "@/hooks": [
+        "./src/hooks"
+      ],
+      "@/stores": [
+        "./src/stores"
+      ],
+      "@/services": [
+        "./src/services"
+      ],
+      "@/utils": [
+        "./src/lib/utils"
+      ],
+      "@/images/*": [
+        "./public/static/images/*"
+      ]
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "./src/types/images.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
