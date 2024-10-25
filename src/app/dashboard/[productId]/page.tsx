@@ -1,12 +1,15 @@
 "use client";
 
+import { use } from "react";
+
 import { useGetProductById } from "@/hooks";
 
 interface ProductPageProps {
-	params: { productId: number };
+	params: Promise<{ productId: number }>;
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
+export default function ProductPage(props: ProductPageProps) {
+	const params = use(props.params);
 	const { productId } = params;
 	const {
 		data: product,

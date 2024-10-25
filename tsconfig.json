@@ -33,7 +33,8 @@
 			"@/services": ["./src/services"],
 			"@/utils": ["./src/lib/utils"],
 			"@/images/*": ["./public/static/images/*"]
-		}
+		},
+		"target": "ES2017"
 	},
 	"include": [
 		"next-env.d.ts",
