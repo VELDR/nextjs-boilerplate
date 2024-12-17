@@ -37,12 +37,14 @@ A lightning-fast, modern boilerplate built with **Next.js 14**, **TypeScript**, 
 ├── src
 │   ├── app                         # Next JS App (App Router)
 │   ├── components                  # React components
-│   │   ├── features                # Containing logic operations
-│   │   ├── shared                  # Header, footer, aside components
+│   │   ├── common                  # Components used across multiple pages
+│   │   ├── layouts                 # Layout components (Headers, footers)
 │   │   ├── skeletons               # Loading components
 │   │   ├── ui                      # Atomic components
 │   │   └── widgets                 # Advanced components
 │   ├── config                      # Configuration files
+│   ├── features                    # Feature specific files
+│   │   └── {feature}               # Feature folder (containing components, types, etc)
 │   ├── data                        # Static or mock data
 │   ├── helpers                     # Helper functions
 │   ├── hooks                       # React hooks

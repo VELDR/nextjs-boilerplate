@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { Header } from "@/components/common";
 import { Providers } from "@/providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Header } from "@/shared";
 import { siteConfig } from "@/config/site";
 
 import "./globals.css";

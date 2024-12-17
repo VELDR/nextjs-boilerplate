@@ -1,7 +1,7 @@
+import { NavLinks } from "@/components/common";
 import { Brand } from "@/components/ui";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { NavLinks } from "@/shared";
 import { CloseButton } from "@/widgets";
 
 interface SidebarProps {

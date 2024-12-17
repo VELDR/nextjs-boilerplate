@@ -19,10 +19,11 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@/features/*": ["./src/features/*"],
 			"@/ui": ["./src/components/ui"],
 			"@/widgets": ["./src/components/widgets"],
 			"@/features": ["./src/components/features"],
-			"@/shared": ["./src/components/shared"],
+			"@/common": ["./src/components/common"],
 			"@/skeletons": ["./src/components/skeletons"],
 			"@/providers/*": ["./src/providers/*"],
 			"@/config": ["./src/config"],
@@ -31,7 +32,7 @@
 			"@/hooks": ["./src/hooks"],
 			"@/stores": ["./src/stores"],
 			"@/services": ["./src/services"],
-			"@/utils": ["./src/lib/utils"],
+			"@/utils/*": ["./src/utils/*"],
 			"@/images/*": ["./public/static/images/*"]
 		}
 	},

@@ -1,5 +1,5 @@
 // Local Storage
-export const setLocal = (key: string, value: any): void => {
+export const setLocal = (key: string, value: unknown): void => {
 	localStorage.setItem(key, JSON.stringify(value));
 };
 
@@ -13,7 +13,7 @@ export const removeLocal = (key: string): void => {
 };
 
 // Session Storage
-export const setSession = (key: string, value: any): void => {
+export const setSession = (key: string, value: unknown): void => {
 	sessionStorage.setItem(key, JSON.stringify(value));
 };
 
@@ -27,7 +27,7 @@ export const removeSession = (key: string): void => {
 };
 
 // Cookies
-export const setCookie = (key: string, value: any, days?: number): void => {
+export const setCookie = (key: string, value: unknown, days?: number): void => {
 	let expires = "";
 	if (days) {
 		const date = new Date();

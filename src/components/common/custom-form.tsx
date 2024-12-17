@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import {
 	Control,
 	Controller,
+	DefaultValues,
 	FieldPath,
 	FieldValues,
 	SubmitHandler,
@@ -51,33 +52,29 @@ export type FieldConfig =
 	| RadioFieldConfig
 	| SelectFieldConfig;
 
-interface CustomFormProps {
-	fields: FieldConfig[];
-	onSubmit: (data: any) => void;
-	zodSchema: z.ZodType<any, any, any>;
-}
-
-export const CustomForm = ({
+export function CustomForm<T extends FieldValues>({
 	fields,
 	onSubmit,
 	zodSchema,
-}: CustomFormProps) => {
+}: {
+	fields: FieldConfig[];
+	onSubmit: (data: T) => void;
+	zodSchema: z.ZodType<T>;
+}) {
+	const defaultValues = fields.reduce((acc, field) => {
+		return { ...acc, [field.name]: field.type === "number" ? null : "" };
+	}, {} as DefaultValues<T>);
+
 	const {
 		handleSubmit,
 		formState: { errors },
 		control,
-	} = useForm({
+	} = useForm<T>({
 		resolver: zodResolver(zodSchema),
-		defaultValues: fields.reduce(
-			(acc, field) => {
-				acc[field.name] = "";
-				return acc;
-			},
-			{} as Record<string, any>
-		),
+		defaultValues,
 	});
 
-	const handleFormSubmit: SubmitHandler<any> = (data) => {
+	const handleFormSubmit: SubmitHandler<T> = (data) => {
 		onSubmit(data);
 	};
 
@@ -86,10 +83,13 @@ export const CustomForm = ({
 			case "radio":
 				return (
 					<Controller
-						name={field.name}
+						name={field.name as FieldPath<T>}
 						control={control}
 						render={({ field: { onChange, value } }) => (
-							<RadioGroup onValueChange={onChange} value={value}>
+							<RadioGroup
+								onValueChange={onChange}
+								value={value as string | undefined}
+							>
 								{field.options.map((option) => (
 									<div
 										key={option.value}
@@ -111,10 +111,13 @@ export const CustomForm = ({
 			case "select":
 				return (
 					<Controller
-						name={field.name}
+						name={field.name as FieldPath<T>}
 						control={control}
 						render={({ field: { onChange, value } }) => (
-							<Select onValueChange={onChange} value={value}>
+							<Select
+								onValueChange={onChange}
+								value={value as string | undefined}
+							>
 								<SelectTrigger>
 									<SelectValue placeholder="Select an option" />
 								</SelectTrigger>
@@ -130,11 +133,30 @@ export const CustomForm = ({
 					/>
 				);
 			case "password":
-				return <PasswordInput name={field.name} control={control} />;
+				return (
+					<PasswordInput name={field.name as FieldPath<T>} control={control} />
+				);
+			case "number":
+				return (
+					<Controller
+						name={field.name as FieldPath<T>}
+						control={control}
+						render={({ field: inputProps }) => (
+							<Input
+								{...inputProps}
+								type="number"
+								id={field.name}
+								onChange={(e) => {
+									inputProps.onChange(Number(e.target.value));
+								}}
+							/>
+						)}
+					/>
+				);
 			default:
 				return (
 					<Controller
-						name={field.name}
+						name={field.name as FieldPath<T>}
 						control={control}
 						render={({ field: inputProps }) => (
 							<Input
@@ -171,17 +193,17 @@ export const CustomForm = ({
 			<Button type="submit">Submit</Button>
 		</form>
 	);
-};
+}
 
 interface PasswordInputProps<T extends FieldValues> {
 	name: FieldPath<T>;
 	control: Control<T>;
 }
 
-const PasswordInput = <T extends FieldValues>({
+function PasswordInput<T extends FieldValues>({
 	name,
 	control,
-}: PasswordInputProps<T>) => {
+}: PasswordInputProps<T>) {
 	const [showPassword, setShowPassword] = useState(false);
 
 	return (
@@ -210,4 +232,4 @@ const PasswordInput = <T extends FieldValues>({
 			)}
 		/>
 	);
-};
+}

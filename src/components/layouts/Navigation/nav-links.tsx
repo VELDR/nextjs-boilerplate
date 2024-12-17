@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import clsx from "clsx";
 
-import { navConfig } from "@/config";
+import { navConfig, NavConfigType } from "@/config";
 
 interface NavLinksProp {
 	showVertical?: boolean;
@@ -27,7 +27,7 @@ export const NavLinks = ({
 				showVertical ? "flex-col items-start" : "flex-row items-center"
 			)}
 		>
-			{navConfig?.map(({ title, href = "/" }: any) => (
+			{navConfig?.map(({ title, href = "/" }: NavConfigType) => (
 				<Link
 					key={href}
 					href={href}

@@ -1,3 +1,8 @@
+export type NavConfigType = {
+	title: string;
+	href: string;
+};
+
 export const navConfig = [
 	{
 		title: "Home",

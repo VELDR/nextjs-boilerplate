@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+import { NavLinks, Sidebar } from "@/components/common";
 import { Menu } from "lucide-react";
 
-import { NavLinks, Sidebar } from "@/shared";
 import { Social, ThemeToggle } from "@/widgets";
 import { Brand, Button } from "@/ui";
 
