@@ -1,11 +1,11 @@
 # ⚡ Next.js Modern Boilerplate
 
-A lightning-fast, modern boilerplate built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**. This project is based on a [nextjs-boilerplate](https://github.com/omergulcicek/nextjs-boilerplate) with custom modifications to enhance developer experience.
+A lightning-fast, modern boilerplate built with **Next.js 15**, **TypeScript**, and **Tailwind CSS**. This project is based on a [nextjs-boilerplate](https://github.com/omergulcicek/nextjs-boilerplate) with custom modifications to enhance developer experience.
 
 ## 🚀 Key Features
 
 - 📁 Advanced, scalable folder structure
-- ⚛️ [Next.js 14](https://nextjs.org/) with App Router
+- ⚛️ [Next.js 15](https://nextjs.org/) with App Router
 - 📘 [TypeScript](https://www.typescriptlang.org/) for type safety
 - 🎨 [Tailwind CSS](https://tailwindcss.com/) for styling
 - 🏪 [Zustand](https://zustand-demo.pmnd.rs/) for state management
