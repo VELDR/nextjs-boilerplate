@@ -12,4 +12,8 @@ export const navConfig = [
 		title: "Dashboard",
 		href: "/dashboard",
 	},
+	{
+		title: "Typography",
+		href: "/typography",
+	},
 ];

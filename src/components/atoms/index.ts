@@ -36,3 +36,33 @@ export {
 	SelectScrollUpButton,
 	SelectScrollDownButton,
 } from "./select";
+export {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "./tooltip";
+export {
+	Table,
+	TableHeader,
+	TableBody,
+	TableFooter,
+	TableHead,
+	TableRow,
+	TableCell,
+	TableCaption,
+} from "./table";
+export { Checkbox } from "./checkbox";
+export {
+	Dialog,
+	DialogPortal,
+	DialogOverlay,
+	DialogClose,
+	DialogTrigger,
+	DialogContent,
+	DialogHeader,
+	DialogFooter,
+	DialogTitle,
+	DialogDescription,
+} from "./dialog";
+export { Typography } from "./typography";

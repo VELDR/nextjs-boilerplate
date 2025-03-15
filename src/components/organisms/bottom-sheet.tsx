@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { CloseButton } from "../widgets";
+import { Typography } from "@/components/atoms";
+import { CloseButton } from "@/components/molecules";
 
 interface BottomSheetProps {
 	isOpen: boolean;
@@ -112,9 +113,13 @@ export const BottomSheet = ({
 								)}
 								<div className="px-4 pb-4">
 									<div className="mb-4 flex items-center justify-between">
-										<h2 className="text-lg font-semibold text-foreground">
+										<Typography
+											variant="body-lg"
+											className="text-foreground"
+											weight="medium"
+										>
 											{title}
-										</h2>
+										</Typography>
 									</div>
 
 									<div className="max-h-[calc(80vh-100px)] overflow-y-auto">
