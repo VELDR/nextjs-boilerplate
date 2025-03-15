@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from "react";
 
 import { X } from "lucide-react";
 
-import { Button } from "../ui";
+import { Button } from "@/components/atoms";
 
 interface CloseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;

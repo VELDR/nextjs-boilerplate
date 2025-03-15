@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { NavLinks, Sidebar } from "@/components/common";
 import { Menu } from "lucide-react";
 
-import { Social, ThemeToggle } from "@/widgets";
-import { Brand, Button } from "@/ui";
+import { Brand, Button } from "@/components/atoms";
+import { NavLinks, Social, ThemeToggle } from "@/components/molecules";
+import { Sidebar } from "@/components/organisms";
 
 export const Header = () => {
 	const [sidebarOpen, setSidebarOpen] = useState(false);

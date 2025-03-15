@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 import { LoaderCircle, Moon, Sun } from "lucide-react";
 
-import { Button } from "@/ui";
+import { Button } from "@/components/atoms";
 
 export const ThemeToggle = () => {
 	const { resolvedTheme, setTheme } = useTheme();

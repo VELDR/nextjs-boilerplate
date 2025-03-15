@@ -26,7 +26,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@/ui";
+} from "@/components/atoms";
 
 type BaseFieldConfig = {
 	name: string;

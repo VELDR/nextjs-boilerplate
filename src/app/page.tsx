@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Github } from "lucide-react";
 
-import { Button } from "@/ui";
+import { Button } from "@/components/atoms";
 
 export default function Home() {
 	return (

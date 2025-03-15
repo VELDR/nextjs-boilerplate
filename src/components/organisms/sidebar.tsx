@@ -1,8 +1,9 @@
-import { NavLinks } from "@/components/common";
-import { Brand } from "@/components/ui";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { CloseButton } from "@/widgets";
+import { Brand } from "@/components/atoms";
+import { CloseButton } from "@/components/molecules/close-button";
+
+import { NavLinks } from "../molecules/nav-links";
 
 interface SidebarProps {
 	isOpen: boolean;

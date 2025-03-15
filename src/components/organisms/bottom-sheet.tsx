@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { CloseButton } from "../widgets";
+import { CloseButton } from "@/components/molecules";
 
 interface BottomSheetProps {
 	isOpen: boolean;

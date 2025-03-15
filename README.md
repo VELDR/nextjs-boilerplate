@@ -36,24 +36,24 @@ A lightning-fast, modern boilerplate built with **Next.js 15**, **TypeScript**, 
 ├── public                          # Public assets folder
 ├── src
 │   ├── app                         # Next JS App (App Router)
-│   ├── components                  # React components
-│   │   ├── common                  # Components used across multiple pages
-│   │   ├── layouts                 # Layout components (Headers, footers)
-│   │   ├── skeletons               # Loading components
-│   │   ├── ui                      # Atomic components
-│   │   └── widgets                 # Advanced components
+│   ├── components                  # Component folders structured based on the Atomic Design pattern
+│   │   ├── atoms                   # Basic building blocks (e.g., buttons, inputs, typography)
+│   │   ├── molecules               # Combinations of atoms forming functional units (e.g., search bars, cards)
+│   │   ├── organisms               # Complex, self-contained UI sections (e.g., headers, modals)
+│   │   └── templates               # Page-level layouts defining structure without specific content
 │   ├── config                      # Configuration files
+│   ├── constants                   # Global, hardcoded constants (e.g., enums, UI values)
 │   ├── features                    # Feature specific files
 │   │   └── {feature}               # Feature folder (containing components, types, etc)
 │   ├── data                        # Static or mock data
-│   ├── helpers                     # Helper functions
+│   ├── helpers                     # Helper functions for specific features (e.g., rendering, formatting)
 │   ├── hooks                       # React hooks
-│   ├── lib                         # Utilities
 │   ├── providers                   # All providers
 │   ├── schemas                     # Form Schemas
 │   ├── services                    # API services
 │   ├── stores                      # Zustand stores
-│   └── types                       # Global type definitions
+│   ├── types                       # Global type definitions
+│   └── utils                       # General-purpose utility functions (e.g., string, date)
 ├── .eslintrc.json                  # ESLint configuration
 ├── .prettierrc                     # Prettier configuration
 ├── components.json                 # shadcn/ui configuration
@@ -61,7 +61,7 @@ A lightning-fast, modern boilerplate built with **Next.js 15**, **TypeScript**, 
 ├── next.config.mjs                 # Next.js configuration
 ├── postcss.config.js               # PostCSS configuration
 ├── README.md                       # README file
-├── tailwind.config.js              # Tailwind CSS configuration
+├── tailwind.config.ts              # Tailwind CSS configuration
 └── tsconfig.json                   # TypeScript configuration
 ```
 

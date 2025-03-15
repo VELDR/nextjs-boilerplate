@@ -1,4 +1,4 @@
-import { Button, Separator, ThemedImage } from "@/components/ui";
+import { Button, Separator, ThemedImage } from "@/components/atoms";
 import notFoundIllustrationDark from "@/images/404-dark.svg";
 import notFoundIllustrationLight from "@/images/404-light.svg";
 
