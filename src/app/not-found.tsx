@@ -1,4 +1,4 @@
-import { Button, Separator, ThemedImage } from "@/components/atoms";
+import { Button, Separator, ThemedImage, Typography } from "@/components/atoms";
 import notFoundIllustrationDark from "@/images/404-dark.svg";
 import notFoundIllustrationLight from "@/images/404-light.svg";
 
@@ -15,11 +15,13 @@ export default function NotFound() {
 				/>
 				<Separator />
 				<div>
-					<h1 className="font-bold ~text-2xl/4xl">Oops! Page not found.</h1>
-					<p>
+					<Typography variant="heading-lg" className="~text-2xl/4xl">
+						Oops! Page not found.
+					</Typography>
+					<Typography variant="body">
 						The page you&apos;re looking for doesn&apos;t exist or has been
 						moved.
-					</p>
+					</Typography>
 				</div>
 				<Button
 					href="/"

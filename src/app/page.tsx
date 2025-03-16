@@ -4,27 +4,34 @@ import Link from "next/link";
 
 import { Github } from "lucide-react";
 
-import { Button } from "@/components/atoms";
+import { Button, Typography } from "@/components/atoms";
 
 export default function Home() {
 	return (
 		<React.Fragment>
 			<section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-40 lg:pb-20">
-				<h1 className="text-center font-bold leading-tight tracking-tighter ~text-3xl/5xl lg:leading-[1.1]">
+				<Typography
+					variant="heading-lg"
+					className="text-center leading-tight tracking-tighter ~text-3xl/5xl lg:leading-[1.1]"
+				>
 					Next.js Boilerplate
-				</h1>
+				</Typography>
 
-				<p className="text-center text-lg font-light text-foreground">
+				<Typography
+					variant="body-lg"
+					className="text-center text-foreground"
+					weight="light"
+				>
 					<Balancer>
 						An open source boilerplate built using Next.js 15, TypeScript, and
 						Tailwind CSS
 					</Balancer>
-				</p>
+				</Typography>
 
 				<nav className="flex items-center gap-4 py-4">
 					<Link href="/dashboard">
 						<Button size="sm" className="text-sm">
-							<span>Get Started</span>
+							Get Started
 						</Button>
 					</Link>
 
@@ -35,7 +42,7 @@ export default function Home() {
 					>
 						<Button variant="outline" size="sm">
 							<Github className="mr-2 h-4 w-4" aria-label="GitHub" />
-							<span>GitHub</span>
+							GitHub
 						</Button>
 					</Link>
 				</nav>

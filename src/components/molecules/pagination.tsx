@@ -13,6 +13,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
+	Typography,
 } from "@/components/atoms";
 
 interface PaginationProps<TData> {
@@ -28,7 +29,9 @@ export function Pagination<TData>({ table }: PaginationProps<TData>) {
 			</div>
 			<div className="flex items-center space-x-6 lg:space-x-8">
 				<div className="flex items-center space-x-2">
-					<p className="text-sm font-medium">Rows per page</p>
+					<Typography variant="caption" className="text-sm font-medium">
+						Rows per page
+					</Typography>
 					<Select
 						value={`${table.getState().pagination.pageSize}`}
 						onValueChange={(value) => {

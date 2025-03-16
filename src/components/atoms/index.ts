@@ -65,3 +65,4 @@ export {
 	DialogTitle,
 	DialogDescription,
 } from "./dialog";
+export { Typography } from "./typography";

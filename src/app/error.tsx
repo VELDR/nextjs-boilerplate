@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { Button } from "@/components/atoms";
+import { Button, Typography } from "@/components/atoms";
 
 interface GlobalErrorProps {
 	error: Error & { digest?: string };
@@ -13,16 +13,16 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 	const [showDetails, setShowDetails] = useState(false);
 
 	return (
-		<div className="flex h-full items-center justify-center">
+		<div className="flex h-[calc(100dvh-60px)] items-center justify-center">
 			<div className="w-full max-w-md space-y-8 rounded-xl p-10 shadow-xl">
 				<div className="text-center">
-					<h2 className="mt-6 text-3xl font-extrabold">
+					<Typography variant="heading-sm" className="mt-6">
 						Oops! Something went wrong
-					</h2>
-					<p className="mt-2 text-sm">
+					</Typography>
+					<Typography variant="caption" className="mt-2">
 						Don&apos;t worry, we&apos;re on it. In the meantime, you can try
 						again or view more details.
-					</p>
+					</Typography>
 				</div>
 				<div className="mt-8 space-y-6">
 					<Button
@@ -40,9 +40,12 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 					</Button>
 					{showDetails && (
 						<div className="mt-4 rounded-md bg-primary p-4 dark:bg-primary">
-							<p className="text-sm text-primary-foreground dark:text-primary-foreground">
+							<Typography
+								variant="caption"
+								className="text-primary-foreground dark:text-primary-foreground"
+							>
 								{error.message}
-							</p>
+							</Typography>
 						</div>
 					)}
 				</div>
