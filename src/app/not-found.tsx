@@ -15,9 +15,7 @@ export default function NotFound() {
 				/>
 				<Separator />
 				<div>
-					<Typography variant="heading-lg" className="~text-2xl/4xl">
-						Oops! Page not found.
-					</Typography>
+					<Typography variant="heading-lg">Oops! Page not found.</Typography>
 					<Typography variant="body">
 						The page you&apos;re looking for doesn&apos;t exist or has been
 						moved.
@@ -25,7 +23,7 @@ export default function NotFound() {
 				</div>
 				<Button
 					href="/"
-					className="mx-auto inline-flex h-10 w-fit items-center justify-center rounded-md px-6 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300"
+					className="mx-auto inline-flex h-10 w-fit items-center justify-center rounded-md px-6 text-sm font-medium shadow-sm transition-colors focus-visible:ring-1 focus-visible:ring-gray-950 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-gray-300"
 					prefetch={false}
 				>
 					Go back home

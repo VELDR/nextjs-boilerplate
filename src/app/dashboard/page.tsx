@@ -82,7 +82,7 @@ export default function Dashboard() {
 	];
 	return (
 		<React.Fragment>
-			<div className="container flex min-h-screen flex-col items-center gap-8 pb-96 pt-10">
+			<div className="container flex min-h-screen flex-col items-center gap-8 pt-10 pb-96">
 				<Typography variant="heading-md">Dashboard</Typography>
 
 				<DataTable columns={columns} data={payments} />

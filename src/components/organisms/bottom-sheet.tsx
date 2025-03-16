@@ -68,7 +68,7 @@ export const BottomSheet = ({
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						onClick={onClose}
-						className="bg-background/80 fixed inset-0 z-50 backdrop-blur-sm"
+						className="bg-background/80 fixed inset-0 z-50 backdrop-blur-xs"
 					/>
 
 					<motion.div
@@ -86,29 +86,29 @@ export const BottomSheet = ({
 						}}
 						className={`fixed z-50 ${
 							isMobile
-								? "bottom-0 left-0 right-0"
-								: "left-1/2 top-1/2 w-full max-w-md"
+								? "right-0 bottom-0 left-0"
+								: "top-1/2 left-1/2 w-full max-w-md"
 						}`}
 					>
 						<div
-							className={`relative bg-secondary ${
+							className={`bg-secondary relative ${
 								isMobile ? "rounded-t-3xl" : "rounded-lg"
 							} ${className}`}
 						>
 							{isMobile && (
 								<div
-									className="absolute bottom-0 left-0 right-0 h-screen bg-secondary"
+									className="bg-secondary absolute right-0 bottom-0 left-0 h-screen"
 									style={{ transform: "translateY(99%)" }}
 								/>
 							)}
 
 							<div className="relative pt-2">
 								{isMobile ? (
-									<div className="mx-auto mb-4 h-1.5 w-12 rounded-full bg-background" />
+									<div className="bg-background mx-auto mb-4 h-1.5 w-12 rounded-full" />
 								) : (
 									<CloseButton
 										onClick={onClose}
-										className="absolute right-2 top-2"
+										className="absolute top-2 right-2"
 									/>
 								)}
 								<div className="px-4 pb-4">

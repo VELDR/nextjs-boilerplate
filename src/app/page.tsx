@@ -12,14 +12,14 @@ export default function Home() {
 			<section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-40 lg:pb-20">
 				<Typography
 					variant="heading-lg"
-					className="text-center leading-tight tracking-tighter ~text-3xl/5xl lg:leading-[1.1]"
+					className="text-center leading-tight tracking-tighter lg:leading-[1.1]"
 				>
 					Next.js Boilerplate
 				</Typography>
 
 				<Typography
 					variant="body-lg"
-					className="text-center text-foreground"
+					className="text-foreground text-center"
 					weight="light"
 				>
 					<Balancer>

@@ -68,7 +68,7 @@ const TypographyShowcase = () => {
 								<div className="mb-2 flex flex-col md:flex-row md:items-center">
 									<Typography
 										variant="caption"
-										className="mb-2 rounded bg-primary px-2 py-1 text-primary-foreground md:mb-0 md:mr-4"
+										className="bg-primary text-primary-foreground mb-2 rounded px-2 py-1 md:mr-4 md:mb-0"
 									>
 										variant={variant}
 									</Typography>
@@ -184,7 +184,7 @@ const TypographyShowcase = () => {
 								</Typography>
 								<Typography
 									variant="caption"
-									className="mt-4 block text-muted-foreground"
+									className="text-muted-foreground mt-4 block"
 								>
 									Tags: <span className="text-link">Design</span>,{" "}
 									<span className="text-link">Typography</span>,{" "}
@@ -197,7 +197,7 @@ const TypographyShowcase = () => {
 							<Typography variant="heading-sm" className="mb-2">
 								Product Card Example
 							</Typography>
-							<div className="rounded-md bg-muted p-4">
+							<div className="bg-muted rounded-md p-4">
 								<Typography variant="subheading-sm" className="text-link">
 									New Release
 								</Typography>
@@ -218,7 +218,7 @@ const TypographyShowcase = () => {
 								</div>
 								<Typography
 									variant="micro"
-									className="mt-4 text-muted-foreground"
+									className="text-muted-foreground mt-4"
 								>
 									*Free shipping on orders over $100. Terms apply.
 								</Typography>

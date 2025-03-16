@@ -8,7 +8,7 @@ import {
 
 import { Search, X } from "lucide-react";
 
-import { Input } from "@/components/atoms";
+import { Button, Input } from "@/components/atoms";
 import { InputProps } from "@/components/atoms/input";
 import { useCombinedRefs } from "@/hooks";
 import { cn } from "@/utils/general";
@@ -75,7 +75,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 		return (
 			<div className="relative flex items-center">
 				<Search
-					className="pointer-events-none absolute left-2 h-4 w-4 text-muted-foreground"
+					className="text-muted-foreground pointer-events-none absolute left-2 h-4 w-4"
 					aria-hidden="true"
 				/>
 				<Input
@@ -85,19 +85,19 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
 					onChange={handleChange}
 					onKeyDown={handleKeyDown}
 					className={cn(
-						"pl-8 pr-8", // Add padding for the search icon
+						"pr-8 pl-8", // Add padding for the search icon
 						className
 					)}
 				/>
 				{value && clearable && (
-					<button
+					<Button
 						type="button"
 						onClick={handleClear}
-						className="absolute right-2 h-4 w-4 text-muted-foreground hover:text-foreground focus:outline-none"
+						className="text-muted-foreground hover:text-foreground absolute right-2 h-4 w-4 focus:outline-hidden"
 						aria-label="Clear search"
 					>
 						<X className="h-4 w-4" />
-					</button>
+					</Button>
 				)}
 			</div>
 		);

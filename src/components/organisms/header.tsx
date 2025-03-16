@@ -14,8 +14,8 @@ export const Header = () => {
 
 	return (
 		<React.Fragment>
-			<header className="border-border/40 bg-background/80 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
-				<div className="container flex h-14 max-w-screen-lg items-center justify-between">
+			<header className="border-border/40 bg-background/80 supports-backdrop-filter:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur-sm">
+				<div className="container flex h-14 max-w-(--breakpoint-lg) items-center justify-between">
 					<div className="flex items-center gap-4 lg:gap-6">
 						<Button
 							variant="ghost"

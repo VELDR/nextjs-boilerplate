@@ -219,7 +219,7 @@ function PasswordInput<T extends FieldValues>({
 					/>
 					<button
 						type="button"
-						className="absolute right-2 top-1/2 -translate-y-1/2"
+						className="absolute top-1/2 right-2 -translate-y-1/2"
 						onClick={() => setShowPassword(!showPassword)}
 					>
 						{showPassword ? (

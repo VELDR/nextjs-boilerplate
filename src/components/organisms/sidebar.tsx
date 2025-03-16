@@ -14,13 +14,13 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 	return (
 		<AnimatePresence>
 			{isOpen && (
-				<div className="fixed inset-0 z-[1000]">
+				<div className="fixed inset-0 z-1000">
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.2 }}
-						className="bg-background/80 absolute inset-0 backdrop-blur-sm"
+						className="bg-background/80 absolute inset-0 backdrop-blur-xs"
 						onClick={onClose}
 					/>
 
@@ -33,7 +33,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 							stiffness: 400,
 							damping: 40,
 						}}
-						className="absolute inset-y-0 left-0 w-64 bg-background shadow-lg"
+						className="bg-background absolute inset-y-0 left-0 w-64 shadow-lg"
 					>
 						<div className="flex h-full flex-col p-4">
 							<div className="flex items-center justify-between pb-4">

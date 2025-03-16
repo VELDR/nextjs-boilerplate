@@ -27,19 +27,19 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
 				<div className="mt-8 space-y-6">
 					<Button
 						onClick={() => reset()}
-						className="flex w-full justify-center rounded-md border border-transparent bg-primary px-4 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+						className="bg-primary flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium shadow-xs focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
 					>
 						Try again
 					</Button>
 					<Button
 						onClick={() => setShowDetails(!showDetails)}
 						variant="outline"
-						className="flex w-full justify-center rounded-md border border-transparent bg-secondary px-4 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2"
+						className="bg-secondary flex w-full justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium shadow-xs focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
 					>
 						{showDetails ? "Hide details" : "See more details"}
 					</Button>
 					{showDetails && (
-						<div className="mt-4 rounded-md bg-primary p-4 dark:bg-primary">
+						<div className="bg-primary dark:bg-primary mt-4 rounded-md p-4">
 							<Typography
 								variant="caption"
 								className="text-primary-foreground dark:text-primary-foreground"
